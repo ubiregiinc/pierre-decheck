@@ -12,6 +12,7 @@ services:
       - "127.0.0.1:8000:8000"
     environment:
       DEV: 'True'
+      PORT: 8000
     env_file: local.env
 
   # This is a development-only sidecar for running tests, etc.
