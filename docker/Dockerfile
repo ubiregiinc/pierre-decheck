@@ -1,4 +1,4 @@
-FROM python:3.7
+FROM python:3.10
 ENV PYTHONUNBUFFERED 1
 
 WORKDIR /pierre-decheck
@@ -12,4 +12,4 @@ RUN useradd -ms /bin/bash app
 RUN chown -R app:app /pierre-decheck
 USER app
 
-CMD web gunicorn -b 0.0.0.0:$PORT wsgi:app
+CMD gunicorn -b 0.0.0.0:$PORT wsgi:app
