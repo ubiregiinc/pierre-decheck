@@ -11,5 +11,6 @@ RUN pip install -r requirements.txt
 RUN useradd -ms /bin/bash app
 RUN chown -R app:app /pierre-decheck
 USER app
+COPY --chown=app:app . /pierre-decheck/
 
 CMD gunicorn -b 0.0.0.0:$PORT wsgi:app
